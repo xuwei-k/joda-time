@@ -4,9 +4,12 @@
 #
 # For more information, see https://travis-ci.org
 
-language: java
+language: scala
+
+sudo: false
 
 jdk: 
   - oraclejdk8
-  - oraclejdk7
-  - openjdk6
+
+script:
+  - sbt mimaReportBinaryIssues
